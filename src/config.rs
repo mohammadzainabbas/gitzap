@@ -4,6 +4,7 @@ use serde::{Deserialize, Serialize};
 pub struct Config {
     pub commit_messages: Vec<String>,
     pub commit_timer: i64,  // time in seconds
+    pub git_token: Option<String>,
 }
 
 impl Config {
