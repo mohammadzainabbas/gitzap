@@ -8,21 +8,6 @@ enum GitCred {
     Token(String),
 }
 
-impl GitCred {
-    fn clone_inner(&self) -> Self {
-        match self {
-            GitCred::Userpass(cred) => GitCred::Userpass(cred.clone()),
-            GitCred::Token(token) => GitCred::Token(token.clone()),
-        }
-    }
-}
-
-impl Clone for GitCred {
-    fn clone(&self) -> Self {
-        self.clone_inner()
-    }
-}
-
 pub fn add_commit_push(repo_path: &str, commit_message: &str, git_info: &GitInfo) -> Result<(), git2::Error> {
     let repo = Repository::open(repo_path)?;
 
