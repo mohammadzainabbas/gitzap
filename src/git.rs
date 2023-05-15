@@ -1,4 +1,4 @@
-use git2::{Repository, Signature};
+use git2::{Commit, IndexAddOption, Repository, Signature, Cred, PushOptions};
 use crate::utils::GitInfo;
 
 pub fn add_commit_push(repo_path: &str, commit_message: &str, git_info: &GitInfo) -> Result<(), git2::Error> {
