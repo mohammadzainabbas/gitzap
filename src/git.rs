@@ -11,4 +11,20 @@ pub fn add_commit_push(repo_path: &str, commit_message: &str, git_info: &GitInfo
     index.write()?;
 
     let oid = index.write_tree()?;
-    let signature = Signature::now(&
+    let signature = Signature::now(&git_info.user_name, &git_info.user_email)?;
+    let parent_commit = find_last_commit(&repo)?;
+    let tree = repo.find_tree(oid)?;
+
+    // committing
+    repo.commit(Some("HEAD"), &signature, &signature, commit_message, &tree, &[&parent_commit])?;
+
+    // pushing
+    repo.find_remote(&git_info.remote_name)?.push(&[format!("refs/heads/{}:refs/heads/{}", git_info.branch_name, git_info.branch_name)], None);
+
+    Ok(())
+}
+
+fn find_last_commit(repo: &Repository) -> Result<git2::Commit, git2::Error> {
+    let obj = repo.head()?.resolve()?.peel(git2::ObjectType::Commit)?;
+    obj.into_commit().map_err(|_| git2::Error::from_str("Couldn't find commit"))
+}
