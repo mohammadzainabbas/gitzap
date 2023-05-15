@@ -42,16 +42,6 @@ pub fn add_commit_push(repo_path: &str, commit_message: &str, git_info: &GitInfo
 
     let mut options = PushOptions::new();
     options.remote_callbacks(callbacks);
-
-    remote.push(&[format!("refs/heads/{}:refs/heads/{}", git_info.branch_name, git_info.branch_name)], Some(&mut options))?;
-
-
-    let mut callbacks = RemoteCallbacks::new();
-    callbacks.credentials(move |_url, _username_from_url, _allowed_types| Ok(credentials));
-
-    let mut options = PushOptions::new();
-    options.remote_callbacks(callbacks);
-
     
     println!("Pushing changes to remote: {}", &git_info.remote_name);
     remote.push(&[format!("refs/heads/{}:refs/heads/{}", git_info.branch_name, git_info.branch_name)], Some(&mut options))?;
