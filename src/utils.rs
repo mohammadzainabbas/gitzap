@@ -91,3 +91,20 @@ pub fn get_git_token() -> Option<String> {
 
     None
 }
+
+pub fn get_git_token() -> Option<String> {
+    let home_dir = dirs::home_dir().expect("Could not get home directory");
+    let global_config_path = home_dir.join(".gitzap.json");
+
+    if global_config_path.exists() {
+        match Config::load_from_file(global_config_path.to_str().expect("Could not read global config file")) {
+            Ok(config) => config.git_token,
+            Err(err) => {
+                eprintln!("Failed to read global config file: {}", err);
+                None
+            }
+        }
+    } else {
+        None
+    }
+}
