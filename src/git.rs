@@ -19,20 +19,23 @@ pub fn add_commit_push(repo_path: &str, commit_message: &str, git_info: &GitInfo
     repo.commit(Some("HEAD"), &signature, &signature, commit_message, &tree, &[&parent_commit])?;
 
     let mut remote = repo.find_remote(&git_info.remote_name)?;
-    let credentials = utils::get_git_token()
-        .map(|token| Cred::userpass_plaintext(&git_info.name, &token))
-        .unwrap_or_else(|| Err(git2::Error::from_str("No Git token provided in config file")))?;
+    let credentials = match crate::utils::get_git_token() {
+        Some(token) => Cred::userpass_plaintext(&git_info.user_name, &token)?,
+        None => return Err(git2::Error::from_str("No Git token provided in config file")),
+    };
 
     let mut callbacks = RemoteCallbacks::new();
-    callbacks.credentials(|_url, _username_from_url, _allowed_types| credentials);
+    callbacks.credentials(|_url, _username_from_url, _allowed_types| Ok(credentials.clone()));
 
     let mut options = PushOptions::new();
     options.remote_callbacks(callbacks);
 
+    println!("Pushing changes to remote: {}", &git_info.remote_name);
+    remote.push(&[format!("refs/heads/{}:refs/heads/{}", git_info.branch_name, git_info.branch_name)], Some(&mut options))?;
+
     // pushing
     // repo.find_remote(&git_info.remote_name)?.push(&[format!("refs/heads/{}:refs/heads/{}", git_info.branch_name, git_info.branch_name)], None);
-    println!("Pushing changes to remote: {}", &git_info.remote_name);
-    remote.push(&[format!("refs/heads/{}:refs/heads/{}", git_info.branch_name, git_info.branch_name)], Some(&options))?;
+    // remote.push(&[format!("refs/heads/{}:refs/heads/{}", git_info.branch_name, git_info.branch_name)], Some(&options))?;
     // if let Err(e) = repo.find_remote(&git_info.remote_name)?.push(&[format!("refs/heads/{}:refs/heads/{}", git_info.branch_name, git_info.branch_name)], None) {
     //     eprintln!("Failed to push changes: {}", e);
     // }    
