@@ -2,8 +2,6 @@ use git2::{Repository, Signature, Cred, PushOptions, RemoteCallbacks};
 use std::cell::RefCell;
 use crate::utils::GitInfo;
 
-use std::cell::RefCell;
-
 #[derive(Clone)]
 enum GitCred {
     Userpass(Cred),
