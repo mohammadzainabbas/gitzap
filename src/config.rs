@@ -7,12 +7,12 @@ pub struct Config {
 }
 
 impl Config {
-    pub fn new() -> Self {
-        Config {
-            commit_messages: Vec::new(),
-            commit_timer: 0,
-        }
-    }
+    // pub fn new() -> Self {
+    //     Config {
+    //         commit_messages: Vec::new(),
+    //         commit_timer: 0,
+    //     }
+    // }
 
     pub fn load_from_file(path: &str) -> Result<Config, Box<dyn std::error::Error>> {
         let file = std::fs::File::open(path)?;
