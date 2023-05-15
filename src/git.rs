@@ -2,18 +2,26 @@ use git2::{Repository, Signature, Cred, PushOptions, RemoteCallbacks};
 use std::cell::RefCell;
 use crate::utils::GitInfo;
 
+use std::cell::RefCell;
+
 #[derive(Clone)]
 enum GitCred {
     Userpass(Cred),
     Token(String),
 }
 
-impl Clone for GitCred {
-    fn clone(&self) -> Self {
+impl GitCred {
+    fn clone_inner(&self) -> Self {
         match self {
             GitCred::Userpass(cred) => GitCred::Userpass(cred.clone()),
             GitCred::Token(token) => GitCred::Token(token.clone()),
         }
+    }
+}
+
+impl Clone for GitCred {
+    fn clone(&self) -> Self {
+        self.clone_inner()
     }
 }
 
