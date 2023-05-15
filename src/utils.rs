@@ -2,6 +2,7 @@ use serde::{Deserialize, Serialize};
 use std::fs::File;
 use std::io::{BufReader, BufWriter};
 use std::process::Command;
+use crate::config::Config;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct GitInfo {
