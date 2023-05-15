@@ -42,7 +42,7 @@ pub fn add_commit_push(repo_path: &str, commit_message: &str, git_info: &GitInfo
     callbacks.credentials(move |_url, _username_from_url, _allowed_types| {
         let mut creds = credentials.borrow_mut();
         match &mut *creds {
-            GitCred::Userpass(cred) => Ok(cred.clone()),
+            GitCred::Userpass(cred) => Ok(cred.to_owned()),
             GitCred::Token(token) => Cred::userpass_plaintext(&git_info.user_name, &token),
         }
     });
