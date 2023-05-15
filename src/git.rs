@@ -2,6 +2,12 @@ use git2::{Repository, Signature, Cred, PushOptions, RemoteCallbacks};
 use std::cell::RefCell;
 use crate::utils::GitInfo;
 
+#[derive(Clone)]
+enum GitCred {
+    Userpass(Cred),
+    Token(String),
+}
+
 pub fn add_commit_push(repo_path: &str, commit_message: &str, git_info: &GitInfo) -> Result<(), git2::Error> {
     let repo = Repository::open(repo_path)?;
 
