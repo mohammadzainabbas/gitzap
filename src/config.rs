@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Config {
     pub commit_messages: Vec<String>,
-    pub commit_timer: i64,  // time in seconds
+    pub commit_timer: u32,  // time in seconds
     pub git_token: Option<String>,
 }
 
