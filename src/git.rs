@@ -36,12 +36,15 @@ pub fn add_commit_push(repo_path: &str, commit_message: &str, git_info: &GitInfo
         None => return Err(git2::Error::from_str("No Git token provided in config file")),
     };
 
-    let credentials = RefCell::new(credentials);
+    let credentials = RefCell::new(git_cred);
 
     let mut callbacks = RemoteCallbacks::new();
     callbacks.credentials(move |_url, _username_from_url, _allowed_types| {
-        let creds = credentials.borrow_mut();
-        Ok(creds.clone())
+        let mut creds = credentials.borrow_mut();
+        match &mut *creds {
+            GitCred::Userpass(cred) => Ok(cred.clone()),
+            GitCred::Token(token) => Cred::userpass_plaintext(&git_info.user_name, &token),
+        }
     });
 
     let mut options = PushOptions::new();
