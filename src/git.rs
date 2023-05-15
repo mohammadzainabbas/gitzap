@@ -1,4 +1,5 @@
 use git2::{Repository, Signature, Cred, PushOptions, RemoteCallbacks};
+use std::cell::RefCell;
 use crate::utils::GitInfo;
 
 pub fn add_commit_push(repo_path: &str, commit_message: &str, git_info: &GitInfo) -> Result<(), git2::Error> {
