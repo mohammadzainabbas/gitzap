@@ -72,4 +72,13 @@ async fn main() {
         sleep(Duration::from_secs(commit_timer as u64)).await;
 
         // Get the commit message
-        let commit_message = &commit_messages[message_index
+        let commit_message = &commit_messages[message_index];
+        message_index = (message_index + 1) % commit_messages.len();
+
+        // Add, commit and push changes
+        if let Err(e) = git::add_commit_push(repo_path, commit_message, &git_info) {
+            eprintln!("Failed to commit and push changes: {}", e);
+        }
+    }
+}
+
