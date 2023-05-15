@@ -25,7 +25,7 @@ pub fn add_commit_push(repo_path: &str, commit_message: &str, git_info: &GitInfo
     };
 
     let mut callbacks = RemoteCallbacks::new();
-    callbacks.credentials(move |_url, _username_from_url, _allowed_types| Ok(credentials.clone()));
+    callbacks.credentials(move |_url, _username_from_url, _allowed_types| Ok(credentials));
 
     let mut options = PushOptions::new();
     options.remote_callbacks(callbacks);
