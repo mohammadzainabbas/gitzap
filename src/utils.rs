@@ -85,7 +85,7 @@ pub fn get_git_token() -> Option<String> {
     let global_config_path = home_dir.join(".gitzap.json");
 
     if global_config_path.exists() {
-        let config = Config::from_file(&global_config_path).expect("Could not read global config file");
+        let config = Config::load_from_file(&global_config_path).expect("Could not read global config file");
         return config.git_token;
     }
 
