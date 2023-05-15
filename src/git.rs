@@ -25,13 +25,6 @@ pub fn add_commit_push(repo_path: &str, commit_message: &str, git_info: &GitInfo
         None => return Err(git2::Error::from_str("No Git token provided in config file")),
     };
 
-    --
-
-    let credentials = match crate::utils::get_git_token() {
-        Some(token) => Cred::userpass_plaintext(&git_info.user_name, &token)?,
-        None => return Err(git2::Error::from_str("No Git token provided in config file")),
-    };
-
     let credentials = RefCell::new(credentials);
 
     let mut callbacks = RemoteCallbacks::new();
