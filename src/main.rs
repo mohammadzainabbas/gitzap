@@ -1,4 +1,4 @@
-use tokio::time::{sleep, Duration};
+use tokio::time::{Duration};
 use std::env;
 use std::path::Path;
 use std::process;
@@ -68,11 +68,16 @@ async fn main() {
     };
 
     loop {
-        // Wait for the timer duration
-        sleep(Duration::from_secs(commit_timer as u64)).await;
 
-        // Get the commit message
+        // Wait for the timer duration
+        let sleep_duration = Duration::from_secs(commit_timer as u64);
+        println!("Sleeping for {} seconds", sleep_duration.as_secs());
+
+        tokio::time::sleep(sleep_duration).await;
+        // sleep(Duration::from_secs(commit_timer as u64)).await;        
+
         let commit_message = &commit_messages[message_index];
+        println!("Committing changes with message: {}", commit_message);
         message_index = (message_index + 1) % commit_messages.len();
 
         // Add, commit and push changes

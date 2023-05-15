@@ -22,6 +22,7 @@ impl GitInfo {
     // }
 
     pub fn load_from_temp() -> Result<GitInfo, Box<dyn std::error::Error>> {
+        println!("Reading Git information from temporary file: gitzap_temp.json");
         let file = File::open("gitzap_temp.json")?;
         let reader = BufReader::new(file);
         let git_info = serde_json::from_reader(reader)?;
@@ -30,6 +31,7 @@ impl GitInfo {
     }
 
     pub fn write_to_temp(&self) -> Result<(), Box<dyn std::error::Error>> {
+        println!("Writing Git information to temporary file: gitzap_temp.json");
         let file = File::create("gitzap_temp.json")?;
         let writer = BufWriter::new(file);
         serde_json::to_writer(writer, self)?;
