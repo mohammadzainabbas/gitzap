@@ -19,7 +19,10 @@ pub fn add_commit_push(repo_path: &str, commit_message: &str, git_info: &GitInfo
     repo.commit(Some("HEAD"), &signature, &signature, commit_message, &tree, &[&parent_commit])?;
 
     // pushing
-    repo.find_remote(&git_info.remote_name)?.push(&[format!("refs/heads/{}:refs/heads/{}", git_info.branch_name, git_info.branch_name)], None);
+    // repo.find_remote(&git_info.remote_name)?.push(&[format!("refs/heads/{}:refs/heads/{}", git_info.branch_name, git_info.branch_name)], None);
+    if let Err(e) = repo.find_remote(&git_info.remote_name)?.push(&[format!("refs/heads/{}:refs/heads/{}", git_info.branch_name, git_info.branch_name)], None) {
+        eprintln!("Failed to push changes: {}", e);
+    }    
 
     Ok(())
 }
