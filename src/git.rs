@@ -2,25 +2,19 @@ use git2::{Repository, Signature, Cred, PushOptions, RemoteCallbacks};
 use std::cell::RefCell;
 use crate::utils::GitInfo;
 
-struct CloneableCred(Cred);
-
-impl Clone for CloneableCred {
-    fn clone(&self) -> Self {
-        CloneableCred(self.0.clone())
-    }
-}
-
-impl ToOwned for CloneableCred {
-    type Owned = CloneableCred;
-
-    fn to_owned(&self) -> CloneableCred {
-        self.clone()
-    }
-}
-
+#[derive(Clone)]
 enum GitCred {
-    Userpass(CloneableCred),
+    Userpass(Cred),
     Token(String),
+}
+
+impl Clone for GitCred {
+    fn clone(&self) -> Self {
+        match self {
+            GitCred::Userpass(cred) => GitCred::Userpass(cred.clone()),
+            GitCred::Token(token) => GitCred::Token(token.clone()),
+        }
+    }
 }
 
 pub fn add_commit_push(repo_path: &str, commit_message: &str, git_info: &GitInfo) -> Result<(), git2::Error> {
