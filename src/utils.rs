@@ -12,14 +12,14 @@ pub struct GitInfo {
 }
 
 impl GitInfo {
-    pub fn new() -> Self {
-        GitInfo {
-            user_name: String::new(),
-            user_email: String::new(),
-            remote_name: String::new(),
-            branch_name: String::new(),
-        }
-    }
+    // pub fn new() -> Self {
+    //     GitInfo {
+    //         user_name: String::new(),
+    //         user_email: String::new(),
+    //         remote_name: String::new(),
+    //         branch_name: String::new(),
+    //     }
+    // }
 
     pub fn load_from_temp() -> Result<GitInfo, Box<dyn std::error::Error>> {
         let file = File::open("gitzap_temp.json")?;
