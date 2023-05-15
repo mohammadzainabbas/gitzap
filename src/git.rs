@@ -51,16 +51,16 @@ pub fn add_commit_push(repo_path: &str, commit_message: &str, git_info: &GitInfo
     callbacks.credentials(move |_url, _username_from_url, _allowed_types| {
         let mut creds = credentials.borrow_mut();
         match &mut *creds {
-            GitCred::Userpass(cred) => Ok(cred.0.clone()),
+            GitCred::Userpass(cred) => Ok(cred.clone()),
             GitCred::Token(token) => Cred::userpass_plaintext(&git_info.user_name, &token),
         }
     });
 
     let mut options = PushOptions::new();
     options.remote_callbacks(callbacks);
-
+    
     println!("Pushing changes to remote: {}", &git_info.remote_name);
-    remote.push(&[format!("refs/heads/{}:refs/heads/{}", git_info.branch_name, git_info.branch_name)], Some(&mut options))?;    
+    remote.push(&[format!("refs/heads/{}:refs/heads/{}", git_info.branch_name, git_info.branch_name)], Some(&mut options))?;
 
     // pushing
     // repo.find_remote(&git_info.remote_name)?.push(&[format!("refs/heads/{}:refs/heads/{}", git_info.branch_name, git_info.branch_name)], None);
