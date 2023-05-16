@@ -29,7 +29,7 @@ pub fn add_commit_push(repo_path: &str, commit_message: &str, git_info: &GitInfo
 
     let mut callbacks = RemoteCallbacks::new();
     callbacks.credentials(move |_url, _username_from_url, _allowed_types| {
-        let creds = credentials.borrow_mut();
+        let creds = credentials.borrow();
         Ok(creds.clone())
     });
 
