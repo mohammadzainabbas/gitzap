@@ -1,4 +1,6 @@
 mod cli;
 
 #[tokio::main]
-async fn main() {}
+async fn main() {
+    let args = cli.parse();
+}
