@@ -26,6 +26,7 @@ jobs:
         uses: RubbaBoy/BYOB@v1
         with:
           NAME: check
+          LABEL: check
           
 
   test:
