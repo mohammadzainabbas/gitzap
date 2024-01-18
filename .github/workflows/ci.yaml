@@ -2,12 +2,14 @@ name: 🚀 Rust CI
 
 on:
     push:
-        branches: [main]
-        paths:
-            - "Cargo.lock"
-            - "Cargo.toml"
+      branches:
+        - main
+      paths:
+        - Cargo.lock
+        - Cargo.toml
     pull_request:
-        branches: [main]
+      branches:
+        - main
 
 jobs:
   check:
