@@ -13,7 +13,7 @@ struct Cli {
         short = 'c',
         long = "config",
         help = "Configuration file path",
-        default_value = ".co",
+        default_value = "config.toml",
         display_order = 1
     )]
     config: String,
