@@ -29,6 +29,7 @@ jobs:
         if: ${{ failure() && steps.cargo-check.conclusion == 'failure' }}
         with:
           name: check
+          icon: 
           label: 
           status: Fail
           color: red
