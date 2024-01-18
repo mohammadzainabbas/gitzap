@@ -2,7 +2,9 @@ name: 🚀 Rust CI
 
 on:
     pull_request:
-        branch
+        branches: [main]
+    push:
+        branches: [main]
 
 jobs:
   check:
