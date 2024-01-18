@@ -1,5 +1,7 @@
 use clap::Parser;
 
+use crate::constants;
+
 #[derive(Debug, Parser)]
 #[clap(
     name = env!("CARGO_PKG_NAME"),
