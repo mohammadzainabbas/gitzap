@@ -1,6 +1,6 @@
 [package]
 name = "gitzap"
-description = "Continuously push code to github"
+description = "Automates the process of adding, committing, and pushing changes to a GitHub repository."
 version = "0.1.0"
 edition = "2018"
 
