@@ -12,8 +12,6 @@ edition = "2021"
 [dependencies]
 git2 = "0.13.12"
 
-dirs = "5.0.1"
-
 # Types serialization/deserialization
 serde = { version = "1.0.195", features = ["derive"] }
 
@@ -25,3 +23,6 @@ clap = { version = "4.4.18", features = ["derive"] }
 
 # Config
 toml = "0.8.8"
+
+# 
+dirs = "5.0.1"
