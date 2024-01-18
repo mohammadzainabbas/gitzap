@@ -5,6 +5,7 @@ authors = ["Mohammad Zain Abbas <mohammadzainabbas@gmail.com>"]
 version = "0.1.0"
 repository = "https://github.com/mohammadzainabbas/gitzap"
 keywords = ["git", "git-commit", "auto-commit", "automate", "automation"]
+categories = ["command-line-utilities"]
 edition = "2021"
 
 [dependencies]
