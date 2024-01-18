@@ -1,5 +1,7 @@
 name: 🚀 Rust CI
 
+run-name: 🚀 Rust CI workflow deployed by @${{ github.actor }} 
+
 on:
   push:
     branches: [main]
