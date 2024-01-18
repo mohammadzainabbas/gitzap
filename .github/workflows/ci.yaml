@@ -23,7 +23,10 @@ jobs:
         with:
           command: check
       - name: Check Badge
-        uses: 
+        uses: RubbaBoy/BYOB@v1
+        with:
+          NAME: check
+          
 
   test:
     name: Cargo test
