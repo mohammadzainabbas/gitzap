@@ -39,7 +39,7 @@ jobs:
 
   fmt:
     name: Rustfmt
-    needs: [check]
+    needs: [check, test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -56,7 +56,7 @@ jobs:
 
   clippy:
     name: Clippy
-    needs: [check]
+    needs: [check, test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
