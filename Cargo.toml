@@ -12,7 +12,9 @@ categories = ["command-line-utilities"]
 edition = "2021"
 
 [dependencies]
-git2 = "0.13.12"
+
+# Git
+git2 = "0.18.1"
 
 # Types serialization/deserialization
 serde = { version = "1.0.195", features = ["derive"] }
