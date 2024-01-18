@@ -30,10 +30,10 @@ jobs:
         with:
           name: check
           icon: 
-          label: 
+          label: Cargo Check 
           status: Fail
           color: red
-          github_token:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
   test:
     name: Cargo test
