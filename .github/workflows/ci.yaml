@@ -6,7 +6,7 @@ on:
     paths: ['Cargo.lock', 'Cargo.toml']
   pull_request:
     branches: [main]
-    paths-ignore: ['*.md', 'assets/*', ]
+    paths-ignore: ['*.md', 'assets/**', ]
 
 jobs:
   check:
