@@ -1,8 +1,8 @@
 <div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mohammadzainabbas/gitzap/dev/assets/logo_dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mohammadzainabbas/gitzap/dev/assets/logo_light.png">
-  <img alt="GitZap Icon" src="https://raw.githubusercontent.com/mohammadzainabbas/gitzap/dev/assets/logo_light.png">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mohammadzainabbas/gitzap/dev/assets/logo_dark.png">
+        <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mohammadzainabbas/gitzap/dev/assets/logo_light.png">
+        <img alt="GitZap Icon" src="https://raw.githubusercontent.com/mohammadzainabbas/gitzap/dev/assets/logo_light.png">
 </picture>
 </div>
 
