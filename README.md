@@ -9,7 +9,7 @@
 <p align="center">
     <a href="https://play.rust-lang.org/"><img src="https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white"></a>
     &nbsp;
-    <a href="https://github.com/MedzikUser/HomeDisk"><img src="https://img.shields.io/badge/license-GPL_3.0-00bfff.svg?style=flat-square"></a>
+    <a href="https://github.com/MedzikUser/HomeDisk"><img src="https://badgen.net/github/license/mohammadzainabbas/gitzap?icon=github"></a>
     &nbsp;
     <a href="https://github.com/MedzikUser/HomeDisk"><img src="https://img.shields.io/github/workflow/status/MedzikUser/HomeDisk/Rust/main?style=flat-square"></a>
     &nbsp;
