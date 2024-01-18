@@ -1,11 +1,3 @@
-use tokio::time::{Duration};
-use std::env;
-use std::path::Path;
-use std::process;
-
-mod config;
-mod git;
-mod utils;
 
 #[tokio::main]
 async fn main() {
