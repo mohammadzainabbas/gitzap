@@ -1,7 +1,5 @@
 name: 🚀 Rust CI
 
-run-name: 🚀 Rust CI deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
-
 on:
   push:
     branches: [main]
