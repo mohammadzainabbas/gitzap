@@ -11,7 +11,7 @@
     &nbsp;
     <a href="https://github.com/mohammadzainabbas/gitzap?tab=MIT-1-ov-file"><img src="https://badgen.net/github/license/mohammadzainabbas/gitzap?icon=github"></a>
     &nbsp;
-    <a href="https://github.com/MedzikUser/HomeDisk"><img src="https://github.com/github/docs/actions/workflows/main.yml/badge.svg"></a>
+    <a href="https://github.com/MedzikUser/HomeDisk"><img src="https://github.com/mohammadzainabbas/gitzap/actions/workflows/ci.yaml/badge.svg"></a>
     &nbsp;
     <a href="https://github.com/MedzikUser/HomeDisk"><img src="https://img.shields.io/github/workflow/status/MedzikUser/HomeDisk/Rust/main?style=flat-square"></a>
     &nbsp;
