@@ -4,6 +4,7 @@ name: 👨🏻‍💻 Code Coverage with grcov
 on:
   push:
     branches: [main]
+    paths: ['Cargo.lock', 'Cargo.toml']
 
 jobs:
   grcov:
