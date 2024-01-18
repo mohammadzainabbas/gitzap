@@ -13,7 +13,7 @@ edition = "2021"
 git2 = "0.13.12"
 dirs = "3.0"
 
-# Types 
+# Types serialization/deserialization
 serde = { version = "1.0.195", features = ["derive"] }
 
 # Tokio runtime
