@@ -26,6 +26,15 @@ jobs:
         with:
           command: check
       - uses: RubbaBoy/BYOB@v1
+        if: ${{ success() }}
+        with:
+          name: check
+          icon: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDhweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNDhweCIgZmlsbD0iI0ZGRkZGRiI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTIyLjcgMTlsLTkuMS05LjFjLjktMi4zLjQtNS0xLjUtNi45LTItMi01LTIuNC03LjQtMS4zTDkgNiA2IDkgMS42IDQuN0MuNCA3LjEuOSAxMC4xIDIuOSAxMi4xYzEuOSAxLjkgNC42IDIuNCA2LjkgMS41bDkuMSA5LjFjLjQuNCAxIC40IDEuNCAwbDIuMy0yLjNjLjUtLjQuNS0xLjEuMS0xLjR6Ii8+PC9zdmc+'
+          label: Cargo Check 
+          status: Pass
+          color: green
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: RubbaBoy/BYOB@v1
         if: ${{ failure() && steps.cargo-check.conclusion == 'failure' }}
         with:
           name: check
