@@ -14,8 +14,8 @@
     <a href="https://github.com/mohammadzainabbas/gitzap"><img src="https://github.com/mohammadzainabbas/gitzap/actions/workflows/ci.yaml/badge.svg"></a>
     &nbsp;
     <a href="https://github.com/mohammadzainabbas/gitzap"><img src="https://github.com/mohammadzainabbas/gitzap/actions/workflows/code_coverage.yaml/badge.svg"></a>
-    &nbsp;
+    <!-- &nbsp;
     <a href="https://homedisk-doc.vercel.app"><img src="https://img.shields.io/badge/docs.rs-66c2a5?style=flat-square&labelColor=555555&logo=docs.rs"></a>
     &nbsp;
-    <a href="https://documenter.getpostman.com/view/23280189/VVk9dwRk"><img src="https://img.shields.io/badge/API_Docs-887BB0?style=flat-square&labelColor=555555&logo=postman"></a>
+    <a href="https://documenter.getpostman.com/view/23280189/VVk9dwRk"><img src="https://img.shields.io/badge/API_Docs-887BB0?style=flat-square&labelColor=555555&logo=postman"></a> -->
 </p>
