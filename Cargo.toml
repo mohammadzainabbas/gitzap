@@ -1,11 +1,31 @@
+# https://doc.rust-lang.org/cargo/reference/manifest.html
+
 [package]
 name = "gitzap"
+description = "Automates the process of adding, committing, and pushing changes to a GitHub repository."
+authors = ["Mohammad Zain Abbas <mohammadzainabbas@gmail.com>"]
 version = "0.1.0"
-edition = "2018"
+homepage = "https://github.com/mohammadzainabbas/gitzap"
+repository = "https://github.com/mohammadzainabbas/gitzap"
+keywords = ["git", "git-commit", "auto-commit", "automate", "automation"]
+categories = ["command-line-utilities"]
+edition = "2021"
 
 [dependencies]
-git2 = "0.13.12"
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0"
-tokio = { version = "1", features = ["full"] }
-dirs = "3.0"
+# Bindings to libgit2
+git2 = "0.18.1"
+
+# Types serialization/deserialization
+serde = { version = "1.0.195", features = ["derive"] }
+
+# Tokio runtime
+tokio = { version = "1.35.1", features = ["full"] }
+
+# CLI
+clap = { version = "4.4.18", features = ["derive"] }
+
+# Config
+toml = "0.8.8"
+
+# Platform-specific user-accessible locations
+dirs = "5.0.1"
