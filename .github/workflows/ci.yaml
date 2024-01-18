@@ -6,7 +6,7 @@ on:
     paths: ['Cargo.lock', 'Cargo.toml']
   pull_request:
     branches: [main]
-    paths: ['src/**', ]
+    paths: ['src/**', 'Cargo.lock', 'Cargo.toml']
 
 jobs:
   check:
