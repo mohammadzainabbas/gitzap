@@ -6,7 +6,7 @@ use clap::Parser;
     about = env!("CARGO_PKG_DESCRIPTION"),
     version = env!("CARGO_PKG_VERSION"),
 )]
-struct Cli {
+pub struct Cli {
     #[clap(
         short = 'c',
         long = "config",
