@@ -3,9 +3,6 @@ name: 🚀 Rust CI
 on:
   push:
     branches: [main]
-    paths: ['Cargo.lock', 'Cargo.toml']
-  pull_request:
-    branches: [main]
 
 jobs:
   grcov:
