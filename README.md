@@ -1,7 +1,7 @@
 <div align="center">
     <picture>
-        <img width="500" src="https://raw.githubusercontent.com/mohammadzainabbas/gitzap/main/.github/assets/logo_dark.png#gh-dark-mode-only" alt="GitZap Icon" />
-        <img width="500" src="https://raw.githubusercontent.com/mohammadzainabbas/gitzap/main/.github/assets/logo_light.png#gh-light-mode-only" alt="GitZap Icon" />
+        <img width="500" src="https://raw.githubusercontent.com/mohammadzainabbas/gitzap/dev/.github/assets/logo_dark.png#gh-dark-mode-only" alt="GitZap Icon" />
+        <img width="500" src="https://raw.githubusercontent.com/mohammadzainabbas/gitzap/dev/.github/assets/logo_light.png#gh-light-mode-only" alt="GitZap Icon" />
     </picture>
 </div>
 
