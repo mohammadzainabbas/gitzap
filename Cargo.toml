@@ -3,6 +3,7 @@ name = "gitzap"
 description = "Automates the process of adding, committing, and pushing changes to a GitHub repository."
 authors = ["Mohammad Zain Abbas <mohammadzainabbas@gmail.com>"]
 version = "0.1.0"
+readme = "README.md"
 edition = "2021"
 
 [dependencies]
