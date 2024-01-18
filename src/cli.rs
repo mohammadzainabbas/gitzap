@@ -15,6 +15,4 @@ struct Cli {
         display_order = 1
     )]
     config: String,
-    #[clap(short = 'd', long = "database", help = "SQLite database path", default_value = DEFAULT_DATABASE_FILE, display_order = 2)]
-    database: String,
 }
