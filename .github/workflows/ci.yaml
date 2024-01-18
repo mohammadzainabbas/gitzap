@@ -2,7 +2,7 @@ name: 🚀 Rust CI
 
 on:
     pull_request:
-        main
+        branch
 
 jobs:
   check:
