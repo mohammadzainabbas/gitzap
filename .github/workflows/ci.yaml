@@ -28,8 +28,8 @@ jobs:
       - uses: RubbaBoy/BYOB@v1
         if: ${{ failure() && steps.cargo-check.conclusion == 'failure' }}
         with:
-          name: 
-          status:
+          name: check
+          status: 
           color:
           github_token:
 
