@@ -22,15 +22,9 @@ jobs:
           toolchain: stable
           override: true
       - uses: actions-rs/cargo@v1
+        id: cargo-check
         with:
           command: check
-  check-badge:
-    name: Generate `cargo check` badge
-    runs-on: ubuntu-latest
-    steps:
-      - uses: RubbaBoy/BYOB@v1
-        with:
-          name: check
 
   test:
     name: Cargo test
