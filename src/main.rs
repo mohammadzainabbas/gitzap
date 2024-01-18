@@ -23,6 +23,7 @@ pub struct Cli {
         default_value = ".",
         display_order = 2
     )]
+    path: String,
 }
 
 #[tokio::main]
