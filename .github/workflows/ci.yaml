@@ -26,9 +26,9 @@ jobs:
     name: Generate `cargo check` badge
     runs-on: ubuntu-latest
     steps:
-      - uses: actions-rs/cargo@v1
+      - uses: RubbaBoy/BYOB@v1
         with:
-          command: check
+          name: check
 
   test:
     name: Cargo test
