@@ -22,12 +22,6 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: check
-      - name: Check Badge
-        uses: RubbaBoy/BYOB@v1
-        with:
-          NAME: check
-          LABEL: check
-          
 
   test:
     name: Cargo test
