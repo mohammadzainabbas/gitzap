@@ -1,5 +1,7 @@
 # https://github.com/actions-rs/example/blob/master/.github/workflows/grcov.yml
-name: 👨🏻‍💻 Code Coverage with grcov
+name: Code Coverage
+
+run-name: 👨🏻‍💻 ${{ github.workflow }} with grcov(${{ github.run_number }}) workflow deployed by @${{ github.actor }} on ${{ github.ref_name }} with event ${{ github.event_name }}
 
 on:
   push:
