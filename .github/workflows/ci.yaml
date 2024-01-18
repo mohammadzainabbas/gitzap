@@ -26,7 +26,7 @@ jobs:
         with:
           command: check
       - uses: RubbaBoy/BYOB@v1
-        if: ${{ failure() &&  }}
+        if: ${{ failure() && steps.demo.conclusion == 'failure' }}
         with:
           name:
           status:
