@@ -26,6 +26,8 @@ jobs:
         with:
           command: check
       - uses: RubbaBoy/BYOB@v1
+        if: ${{ failure() }}
+        
 
   test:
     name: Cargo test
