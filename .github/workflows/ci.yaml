@@ -25,6 +25,7 @@ jobs:
         id: cargo-check
         with:
           command: check
+      - uses: RubbaBoy/BYOB@v1
 
   test:
     name: Cargo test
