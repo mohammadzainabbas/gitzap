@@ -1,6 +1,6 @@
 name: 🚀 Rust CI
 
-run-name: 🚀 Rust CI (${{ github.run_number }}) workflow deployed by @${{ github.actor }} on ${{ github.event_name }}
+run-name: ${{ github.workflow }}(${{ github.run_number }}) workflow deployed by @${{ github.actor }} on ${{ github.event_name }}
 
 on:
   push:
