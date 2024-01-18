@@ -19,7 +19,9 @@ pub struct Cli {
     #[clap(
         short = 'p',
         long = "path",
-        help = ""
+        help = "Path for git repo",
+        default_value = ".",
+        display_order = 2
     )]
 }
 
