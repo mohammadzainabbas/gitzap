@@ -9,7 +9,13 @@ use crate::constants;
     version = env!("CARGO_PKG_VERSION"),
 )]
 struct Cli {
-    #[clap(short = 'c', long = "config", help = "Configuration file path", default_value = DEFAULT_CONFIG_FILE, display_order = 1)]
+    #[clap(
+        short = 'c',
+        long = "config",
+        help = "Configuration file path",
+        default_value = ".co",
+        display_order = 1
+    )]
     config: String,
     #[clap(short = 'd', long = "database", help = "SQLite database path", default_value = DEFAULT_DATABASE_FILE, display_order = 2)]
     database: String,
