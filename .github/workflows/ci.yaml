@@ -1,5 +1,7 @@
 name: 🚀 Rust CI
 
+run-name: 
+
 on:
   push:
     branches: [main]
