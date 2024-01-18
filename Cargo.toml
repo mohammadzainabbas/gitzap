@@ -24,5 +24,5 @@ clap = { version = "4.4.18", features = ["derive"] }
 # Config
 toml = "0.8.8"
 
-# 
+# Platform-specific user-accessible locations
 dirs = "5.0.1"
