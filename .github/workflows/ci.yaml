@@ -26,8 +26,12 @@ jobs:
         with:
           command: check
       - uses: RubbaBoy/BYOB@v1
-        if: ${{ failure() }}
-        
+        if: ${{ failure() &&  }}
+        with:
+          name:
+          status:
+          color:
+          github_token:
 
   test:
     name: Cargo test
