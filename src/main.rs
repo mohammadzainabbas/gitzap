@@ -15,6 +15,12 @@ pub struct Cli {
         display_order = 1
     )]
     config: String,
+
+    #[clap(
+        short = 'p',
+        long = "path",
+        help = ""
+    )]
 }
 
 #[tokio::main]
