@@ -1,2 +1,7 @@
+[user]
+name = "Mohammad Zain Abbas"
+email = "mohammadzainabbas@gmail.com"
+
 [git]
-user_name = "Mohammad Zain Abbas"
+remote = "origin"
+branch = "dev"
