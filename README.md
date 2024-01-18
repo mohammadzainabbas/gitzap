@@ -13,7 +13,7 @@
     &nbsp;
     <a href="https://github.com/MedzikUser/HomeDisk"><img src="https://github.com/mohammadzainabbas/gitzap/actions/workflows/ci.yaml/badge.svg"></a>
     &nbsp;
-    <a href="https://github.com/MedzikUser/HomeDisk"><img src="https://img.shields.io/github/workflow/status/MedzikUser/HomeDisk/Rust/main?style=flat-square"></a>
+    <a href="https://github.com/MedzikUser/HomeDisk"><img src="https://github.com/mohammadzainabbas/gitzap/actions/workflows/code_coverage.yaml/badge.svg"></a>
     &nbsp;
     <a href="https://homedisk-doc.vercel.app"><img src="https://img.shields.io/badge/docs.rs-66c2a5?style=flat-square&labelColor=555555&logo=docs.rs"></a>
     &nbsp;
