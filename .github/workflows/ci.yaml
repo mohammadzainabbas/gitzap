@@ -1,4 +1,6 @@
-name: 🚀 Rust CI
+name: Rust CI
+
+run-name: 🚀 ${{ github.workflow }}(${{ github.run_number }}) workflow deployed by @${{ github.actor }} on ${{ github.ref_name }} with event ${{ github.event_name }}
 
 on:
   push:
@@ -6,6 +8,7 @@ on:
     paths: ['Cargo.lock', 'Cargo.toml']
   pull_request:
     branches: [main]
+    paths: ['src/**', 'Cargo.lock', 'Cargo.toml']
 
 jobs:
   check:
@@ -19,11 +22,31 @@ jobs:
           toolchain: stable
           override: true
       - uses: actions-rs/cargo@v1
+        id: cargo-check
         with:
           command: check
+      # - uses: RubbaBoy/BYOB@v1
+      #   if: ${{ success() }}
+      #   with:
+      #     name: check
+      #     icon: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDhweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNDhweCIgZmlsbD0iI0ZGRkZGRiI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTIyLjcgMTlsLTkuMS05LjFjLjktMi4zLjQtNS0xLjUtNi45LTItMi01LTIuNC03LjQtMS4zTDkgNiA2IDkgMS42IDQuN0MuNCA3LjEuOSAxMC4xIDIuOSAxMi4xYzEuOSAxLjkgNC42IDIuNCA2LjkgMS41bDkuMSA5LjFjLjQuNCAxIC40IDEuNCAwbDIuMy0yLjNjLjUtLjQuNS0xLjEuMS0xLjR6Ii8+PC9zdmc+'
+      #     label: Cargo Check 
+      #     status: Pass
+      #     color: green
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      # - uses: RubbaBoy/BYOB@v1
+      #   if: ${{ failure() && steps.cargo-check.conclusion == 'failure' }}
+      #   with:
+      #     name: check
+      #     icon: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDhweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNDhweCIgZmlsbD0iI0ZGRkZGRiI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTIyLjcgMTlsLTkuMS05LjFjLjktMi4zLjQtNS0xLjUtNi45LTItMi01LTIuNC03LjQtMS4zTDkgNiA2IDkgMS42IDQuN0MuNCA3LjEuOSAxMC4xIDIuOSAxMi4xYzEuOSAxLjkgNC42IDIuNCA2LjkgMS41bDkuMSA5LjFjLjQuNCAxIC40IDEuNCAwbDIuMy0yLjNjLjUtLjQuNS0xLjEuMS0xLjR6Ii8+PC9zdmc+'
+      #     label: Cargo Check 
+      #     status: Fail
+      #     color: red
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
 
   test:
     name: Cargo test
+    needs: [check]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -38,6 +61,7 @@ jobs:
 
   fmt:
     name: Rustfmt
+    needs: [check, test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -54,6 +78,7 @@ jobs:
 
   clippy:
     name: Clippy
+    needs: [check, test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

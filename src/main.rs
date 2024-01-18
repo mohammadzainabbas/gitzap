@@ -15,6 +15,15 @@ pub struct Cli {
         display_order = 1
     )]
     config: String,
+
+    #[clap(
+        short = 'p',
+        long = "path",
+        help = "Path for git repo",
+        default_value = ".",
+        display_order = 2
+    )]
+    path: String,
 }
 
 #[tokio::main]
