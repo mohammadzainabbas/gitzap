@@ -1,6 +1,7 @@
 [package]
 name = "gitzap"
 description = "Automates the process of adding, committing, and pushing changes to a GitHub repository."
+authors = ["Mohammad Zain Abbas <mohammadzainabbas@duck.com>"]
 version = "0.1.0"
 edition = "2018"
 
