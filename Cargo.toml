@@ -12,8 +12,7 @@ categories = ["command-line-utilities"]
 edition = "2021"
 
 [dependencies]
-
-# Git
+# Bindings to libgit2
 git2 = "0.18.1"
 
 # Types serialization/deserialization
