@@ -1,7 +1,8 @@
 name: 🚀 Rust CI
 
 on:
-    pull:
+    pull_request:
+        main
 
 jobs:
   check:
