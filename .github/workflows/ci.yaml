@@ -26,9 +26,9 @@ jobs:
         with:
           command: check
       - uses: RubbaBoy/BYOB@v1
-        if: ${{ failure() && steps.demo.conclusion == 'failure' }}
+        if: ${{ failure() && steps.cargo-check.conclusion == 'failure' }}
         with:
-          name:
+          name: 
           status:
           color:
           github_token:
