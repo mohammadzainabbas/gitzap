@@ -6,7 +6,7 @@ use clap::Parser;
     about = env!("CARGO_PKG_DESCRIPTION"),
     version = env!("CARGO_PKG_VERSION"),
 )]
-pub struct Cli {
+pub struct Args {
     #[clap(
         short = 'c',
         long = "config",
@@ -26,14 +26,14 @@ pub struct Cli {
     path: String,
 }
 
-impl Cli {
+impl Args {
     #[allow(dead_code, clippy::wrong_self_convention)]
-    fn new(&self) -> Cli {
+    fn new(&self) -> Args {
         todo!()
     }
 }
 
-impl GitUtils for Cli {
+impl GitUtils for Args {
     #[allow(unused_variables)]
     fn is_git_repo(path: String) -> bool {
         todo!()

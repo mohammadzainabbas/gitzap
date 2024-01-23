@@ -1,9 +1,9 @@
 use clap::Parser;
-use gitzap::Cli;
+use gitzap::Args;
 
 #[tokio::main]
 async fn main() {
-    let args = Cli::parse();
+    let args = Args::parse();
 
     println!("{:#?}", args)
 }
