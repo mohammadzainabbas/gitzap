@@ -1,5 +1,5 @@
 use crate::GitUtils;
-use clap::Parser;
+
 #[derive(Debug, Parser)]
 #[clap(
     name = env!("CARGO_PKG_NAME"),
