@@ -25,3 +25,11 @@ pub struct Cli {
     )]
     path: String,
 }
+
+use crate::Cli;
+
+impl GitUtils for Cli {
+    fn is_git_repo(path: String) -> bool {
+        todo!()
+    }
+}
