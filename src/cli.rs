@@ -1,4 +1,4 @@
-//! This module contains traits that are usable with the `#[derive(...)]`
+//! `cli` module contains necessary _functions_ and _structs_ to define args from that are usable with the `#[derive(...)]`
 //! macros in `clap_derive`.
 
 use crate::GitUtils;
