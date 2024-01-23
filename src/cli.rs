@@ -27,6 +27,7 @@ pub struct Cli {
 }
 
 impl Cli {
+    #[allow(dead_code)]
     fn new(&self) -> Cli {
         todo!()
     }
