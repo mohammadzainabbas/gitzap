@@ -1,7 +1,24 @@
+//! This module contains traits that are usable with the `#[derive(...)]`
+//! macros in `clap_derive`.
+
 use crate::GitUtils;
 use clap::Parser;
 
+/// Parse command-line arguments into `Self`.
 ///
+/// The primary one-stop-shop trait used to create an instance of a `clap`
+/// [`Command`], conduct the parsing, and turn the resulting [`ArgMatches`] back
+/// into concrete instance of the user struct.
+///
+/// This trait is primarily a convenience on top of [`FromArgMatches`] +
+/// [`CommandFactory`] which uses those two underlying traits to build the two
+/// fundamental functions `parse` which uses the `std::env::args_os` iterator,
+/// and `parse_from` which allows the consumer to supply the iterator (along
+/// with fallible options for each).
+///
+/// See also [`Subcommand`] and [`Args`].
+///
+/// **NOTE:** Deriving requires the `derive` feature flag
 #[derive(Debug, Parser)]
 #[clap(
     name = env!("CARGO_PKG_NAME"),
