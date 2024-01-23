@@ -27,7 +27,7 @@ pub struct Cli {
 }
 
 impl Cli {
-    #[allow(dead_code)]
+    #[allow(dead_code, clippy::wrong_self_convention)]
     fn new(&self) -> Cli {
         todo!()
     }
