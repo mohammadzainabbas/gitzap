@@ -5,6 +5,8 @@ trait GitUtils {
     fn is_git_repo(path: String) -> bool;
 }
 
-impl  {
-    
+impl GitUtils for Cli {
+    fn is_git_repo(path: String) -> bool {
+        
+    }
 }
