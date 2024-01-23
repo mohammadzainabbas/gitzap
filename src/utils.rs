@@ -1,2 +1,2 @@
 #![allow(unused)]
-struct utils;
+trait Utils {}
