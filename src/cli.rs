@@ -1,5 +1,5 @@
+use crate::GitUtils;
 use clap::Parser;
-
 #[derive(Debug, Parser)]
 #[clap(
     name = env!("CARGO_PKG_NAME"),
@@ -25,8 +25,6 @@ pub struct Cli {
     )]
     path: String,
 }
-
-use crate::Cli;
 
 impl GitUtils for Cli {
     fn is_git_repo(path: String) -> bool {
