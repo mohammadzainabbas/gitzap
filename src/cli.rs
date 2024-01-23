@@ -27,6 +27,7 @@ pub struct Cli {
 }
 
 impl GitUtils for Cli {
+    #[allow(unused_variables)]
     fn is_git_repo(path: String) -> bool {
         todo!()
     }
