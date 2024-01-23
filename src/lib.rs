@@ -1,6 +1,6 @@
 pub mod cli;
 
-use pub crate::{
+pub use crate::{
     cli::Cli::parse,
-    
+
 }
