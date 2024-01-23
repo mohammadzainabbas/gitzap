@@ -1,4 +1,4 @@
-mod cli;
+use gitzap::cli;
 
 #[tokio::main]
 async fn main() {
