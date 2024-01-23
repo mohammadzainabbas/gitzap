@@ -1,3 +1,4 @@
+use clap_builder::derive::Parser;
 use gitzap::cli;
 
 #[tokio::main]
